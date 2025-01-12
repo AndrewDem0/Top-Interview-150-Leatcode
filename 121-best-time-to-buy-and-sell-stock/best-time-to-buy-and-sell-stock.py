@@ -7,7 +7,8 @@ class Solution:
         while sell_index < len(prices):
             if prices[buy_index] > prices[sell_index] :
                 buy_index = sell_index
-            else :
-                profit = max(profit, prices[sell_index] - prices[buy_index])
-                sell_index += 1
+
+            profit = max(profit, prices[sell_index] - prices[buy_index])
+            sell_index += 1
+            
         return profit
