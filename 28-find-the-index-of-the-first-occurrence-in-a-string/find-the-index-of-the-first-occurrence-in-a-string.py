@@ -1,11 +1,11 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         """
-        цей алгоритм проходить весь рядок haystack і шукає на проміжку довжиною
-        шуканого слова це слово, якщо не знаходить його то пересувається на 1 
-        індекс вперед поки не пройде весь рядок.
+        This algorithm traverses the string `haystack` and checks a substring 
+        of the same length as the `needle`. If it doesn't find the `needle`, 
+        it shifts one index forward until it traverses the entire string.
 
-        Time Complexity = O(n * m) Space Complexity = O(1)
+        Time Complexity = O(n * m), Space Complexity = O(1)
         """
         for i in range(len(haystack)):
             if haystack[i : i + len(needle)] == needle:
