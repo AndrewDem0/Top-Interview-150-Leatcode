@@ -10,3 +10,12 @@ class Solution:
                 return False
             mag_h[c] -= 1
         return True
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        for letter in ransomNote :
+            if letter in magazine:
+                magazine = magazine.replace(letter, '', 1)
+            else:
+                return False
+        return True
