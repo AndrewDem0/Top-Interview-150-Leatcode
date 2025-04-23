@@ -1,5 +1,6 @@
 class Solution:
-    def MakeHashMap(self, string, HashMap):
+    def MakeHashMap(self, string):
+        HashMap = {}
         for char in string:
             HashMap[char] = 1 + HashMap.get(char, 0)
         return HashMap
@@ -8,10 +9,8 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        Hash_s = {}
-        Hash_t = {}
-        self.MakeHashMap(s, Hash_s)
-        self.MakeHashMap(t, Hash_t)
+        Hash_s = self.MakeHashMap(t)
+        Hash_t = self.MakeHashMap(s)
 
         for i in Hash_s.keys():
             if i not in Hash_t.keys() or Hash_s[i] != Hash_t[i]:
