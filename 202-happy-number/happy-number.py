@@ -16,3 +16,22 @@ class Solution:
             if n == 1:
                 return True
         return False
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        
+        rec = []
+
+        while n != 1:
+            n_s = str(n)
+            n = 0
+
+            for x in n_s:
+                n += pow(int(x),2)
+
+            if n in rec:
+                return False
+            
+            rec.append(n)        
+
+        return True
